@@ -1,7 +1,7 @@
 package de.exxcellent.challenge.processors;
 
 import de.exxcellent.challenge.models.WeatherDataEntry;
-import de.exxcellent.challenge.parser.CsvParser;
+import de.exxcellent.challenge.parser.csv.CsvParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

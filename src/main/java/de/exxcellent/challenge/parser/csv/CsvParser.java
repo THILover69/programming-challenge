@@ -1,8 +1,10 @@
-package de.exxcellent.challenge.parser;
+package de.exxcellent.challenge.parser.csv;
 
 import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvToBeanBuilder;
+import de.exxcellent.challenge.parser.Parser;
+import de.exxcellent.challenge.parser.ParsingException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +12,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CsvParser {
+public class CsvParser implements Parser {
 
     public <T> List<T> parse(String filePath, Class<T> classToParse) throws ParsingException {
         List<String> actualHeaders = this.extractHeader(filePath);
