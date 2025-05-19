@@ -1,21 +1,40 @@
 package de.exxcellent.challenge.processors;
 
 import de.exxcellent.challenge.models.FootballDataEntry;
-
 import java.util.List;
 
+/**
+ * This class processes football data and provides methods to analyze it
+ */
 public class FootballDataProcessor {
 
     private List<FootballDataEntry> footballDataEntries;
 
+    /**
+     * Creates a new processor with the given list of football data entries.
+     *
+     * @param footballDatumEntries the list of entries to use
+     */
     public FootballDataProcessor(List<FootballDataEntry> footballDatumEntries) {
         this.footballDataEntries = footballDatumEntries;
     }
 
+    /**
+     * Sets or replaces the list of football data entries.
+     *
+     * @param footballDatumEntries the new list of entries
+     */
     public void setFootballDataEntries(List<FootballDataEntry> footballDatumEntries) {
         this.footballDataEntries = footballDatumEntries;
     }
 
+    /**
+     * Finds the team with the smallest absolute goal difference.
+     * If more than one team has the same difference, the first one is returned.
+     *
+     * @return the name of the team with the smallest goal difference
+     * @throws IllegalStateException if the list is not set or empty
+     */
     public String getTeamWithSmallestGoalDifference() {
         if (footballDataEntries == null || footballDataEntries.isEmpty()) {
             throw new IllegalStateException("Football data entries are not set or empty.");
