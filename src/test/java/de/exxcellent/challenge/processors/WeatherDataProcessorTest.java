@@ -4,6 +4,7 @@ import de.exxcellent.challenge.models.WeatherDataEntry;
 import de.exxcellent.challenge.parser.csv.CsvParser;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,5 +19,16 @@ class WeatherDataProcessorTest {
         WeatherDataProcessor processor = new WeatherDataProcessor(weatherDataEntryList);
         int result = processor.getDayWithLowestTempSpread();
         assertEquals(2, result);
+    }
+
+    @Test
+    void shouldThrowExceptionWhenWeatherDataIsEmpty() {
+        WeatherDataProcessor processorWithEmptyList = new WeatherDataProcessor(Collections.emptyList());
+
+        IllegalStateException exception = assertThrows(
+                IllegalStateException.class,
+                processorWithEmptyList::getDayWithLowestTempSpread
+        );
+        assertEquals("Weather data entries are not set or empty.", exception.getMessage());
     }
 }

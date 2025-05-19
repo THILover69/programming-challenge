@@ -13,19 +13,19 @@ public class FootballDataProcessor {
     /**
      * Creates a new processor with the given list of football data entries.
      *
-     * @param footballDatumEntries the list of entries to use
+     * @param footballDataEntries the list of entries to use
      */
-    public FootballDataProcessor(List<FootballDataEntry> footballDatumEntries) {
-        this.footballDataEntries = footballDatumEntries;
+    public FootballDataProcessor(List<FootballDataEntry> footballDataEntries) {
+        this.footballDataEntries = footballDataEntries;
     }
 
     /**
      * Sets or replaces the list of football data entries.
      *
-     * @param footballDatumEntries the new list of entries
+     * @param footballDataEntries the new list of entries
      */
-    public void setFootballDataEntries(List<FootballDataEntry> footballDatumEntries) {
-        this.footballDataEntries = footballDatumEntries;
+    public void setFootballDataEntries(List<FootballDataEntry> footballDataEntries) {
+        this.footballDataEntries = footballDataEntries;
     }
 
     /**

@@ -8,24 +8,24 @@ import java.util.List;
  */
 public class WeatherDataProcessor {
 
-    private List<WeatherDataEntry> weatherDataEntryList;
+    private List<WeatherDataEntry> weatherDataEntries;
 
     /**
      * Creates a new processor with the given list of weather data entries.
      *
-     * @param weatherDataEntryList the list of entries to use
+     * @param weatherDataEntries the list of entries to use
      */
-    public WeatherDataProcessor(List<WeatherDataEntry> weatherDataEntryList) {
-        this.weatherDataEntryList = weatherDataEntryList;
+    public WeatherDataProcessor(List<WeatherDataEntry> weatherDataEntries) {
+        this.weatherDataEntries = weatherDataEntries;
     }
 
     /**
      * Sets or replaces the list of weather data entries.
      *
-     * @param weatherDataEntryList the new list of entries
+     * @param weatherDataEntries the new list of entries
      */
-    public void setWeatherDataEntryList(List<WeatherDataEntry> weatherDataEntryList) {
-        this.weatherDataEntryList = weatherDataEntryList;
+    public void setWeatherDataEntries(List<WeatherDataEntry> weatherDataEntries) {
+        this.weatherDataEntries = weatherDataEntries;
     }
 
     /**
@@ -36,12 +36,12 @@ public class WeatherDataProcessor {
      * @throws IllegalStateException if the list is not set or empty
      */
     public int getDayWithLowestTempSpread() {
-        if (weatherDataEntryList == null || weatherDataEntryList.isEmpty()) {
+        if (weatherDataEntries == null || weatherDataEntries.isEmpty()) {
             throw new IllegalStateException("Weather data entries are not set or empty.");
         }
         int lowestSpread = Integer.MAX_VALUE;
         int dayWithLowestSpread = -1;
-        for (WeatherDataEntry data : weatherDataEntryList) {
+        for (WeatherDataEntry data : weatherDataEntries) {
             int spread = data.getMaxTemp() - data.getMinTemp();
             if (spread < lowestSpread) {
                 lowestSpread = spread;
